@@ -130,3 +130,54 @@ allCars.forEach(car => {
 // for (const key of Object.keys(doctorBill)) {
 //   doctorBillSection.innerHTML += `<span>${key}</span>`
 // }
+
+
+
+
+// Lightning Exercise 1: Create an array of objects to represent your favorite dinner items(e.g.meatloaf, spaghetti, fried fish, gumbo).Each object should have a name property, but you can add any other properties that you like, such as size, weight, ethnicity, vegetarian boolean.
+
+const favDinnerItems = [
+  {
+    name: "chicken tacos",
+    ethnicity: "Mexican",
+    vegetarian: false
+  },
+  {
+    name: "spaghetti",
+    vegetarian: true,
+    ethnicity: "Italian"
+  },
+  {
+    name: "sweet potatoes",
+    vegetarian: true,
+    origin: "dirt"
+  },
+  {
+    name: "sushi",
+    vegetarian: "pescetarian",
+    origin: "the sea",
+    ethnicity: "Japanese"
+  },
+  {
+    name: "alpaca burgers",
+    vegetarian: false,
+    ethnicity: "Peruvian"
+  },
+  {
+    name: "Cricket Crunchies",
+    vegetarian: false,
+    type: "snack"
+  }
+]
+
+// Lightning Exercise 2: Output all of the key / value pairs into the DOM inside an <article> element with a class of food.
+//each dinner item is an article 
+
+favDinnerItems.forEach(dinnerItem => {
+  let stringOfHtml ="<article class='food'>";
+  for (const entrySet of Object.entries(dinnerItem)) {
+    stringOfHtml += `<div>${entrySet[0]}: ${entrySet[1]}</div>`
+  }
+  outputElement.innerHTML += stringOfHtml + "</article>"
+})
+
